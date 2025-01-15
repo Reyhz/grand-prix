@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3lyw6ys5782"]
+
+[ext_resource type="PackedScene" uid="uid://x71au4u6mne8" path="res://Scenes/Car/car.tscn" id="1_rutl7"]
+
+[node name="Main" type="Node2D"]
+
+[node name="PlayerCar" parent="." instance=ExtResource("1_rutl7")]
+position = Vector2(500, 300)
