@@ -1,20 +1,91 @@
-[gd_scene load_steps=4 format=3 uid="uid://x71au4u6mne8"]
+[gd_scene load_steps=13 format=3 uid="uid://x71au4u6mne8"]
 
 [ext_resource type="Script" path="res://Scenes/Car/car.gd" id="1_a1kxp"]
-[ext_resource type="Texture2D" uid="uid://mqq3k6jnks4h" path="res://icon.svg" id="1_baaoa"]
+[ext_resource type="Texture2D" uid="uid://bpyty3fli7w2s" path="res://Mini Pixel Pack 2/Cars/Player_blue (16 x 16).png" id="2_5wond"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsb85"]
+atlas = ExtResource("2_5wond")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0l2x"]
+atlas = ExtResource("2_5wond")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpka8"]
+atlas = ExtResource("2_5wond")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srely"]
+atlas = ExtResource("2_5wond")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oeqbx"]
+atlas = ExtResource("2_5wond")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipo0s"]
+atlas = ExtResource("2_5wond")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l3wu"]
+atlas = ExtResource("2_5wond")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ma6c"]
+atlas = ExtResource("2_5wond")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_304qe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsb85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0l2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpka8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srely")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oeqbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipo0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l3wu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ma6c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6tu4c"]
-radius = 18.0
-height = 64.0
+radius = 20.0
+height = 62.0
 
 [node name="Car" type="CharacterBody2D"]
+texture_filter = 3
+rotation = -1.5708
 script = ExtResource("1_a1kxp")
 enginePower = 800
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
-scale = Vector2(0.3, 0.5)
-texture = ExtResource("1_baaoa")
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_304qe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+rotation = 1.5708
+texture = ExtResource("2_5wond")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

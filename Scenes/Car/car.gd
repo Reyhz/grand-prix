@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 var wheelBase = 60
-var steerAngle = 15 # Fixed steering Angle because Keyboard Movement
 var steerDirection = 0
 var acceleration = Vector2.ZERO
 
+@export var steerAngle = 15 # Fixed steering Angle because Keyboard Movement
 @export var enginePower = 400
 @export var brakePower = -200
 @export var friction = -0.25
